@@ -1,0 +1,170 @@
+﻿<Window x:Class="PoolInformation.WindowClient.SubscriptionDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoolInformation.WindowClient"
+        mc:Ignorable="d"
+        Title="Подробная информация об абонемементе" 
+        Height="650" Width="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#f5f9fc">
+
+    <Border Margin="20" 
+            Background="White" 
+            CornerRadius="10" 
+            Padding="30" 
+            BorderThickness="1" 
+            BorderBrush="#D3D3D3">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <!-- Заголовок -->
+                <TextBlock x:Name="TbSubscriptionName" 
+                           Text="Название абонемента" 
+                           FontSize="28" 
+                           FontWeight="Bold" 
+                           Foreground="#b4d5e8"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,30"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+
+                <!-- Основная информация -->
+                <Border Background="#f0f7fb" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="ОСНОВНАЯ ИНФОРМАЦИЯ" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#333"
+                                   Margin="0,0,0,15"/>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Тип абонемента:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbSubscriptionType" 
+                                       Text="-" 
+                                       FontSize="16" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#333"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Количество занятий:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbMaxVisits" 
+                                       Text="-" 
+                                       FontSize="16" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#333"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Срок действия:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbDuration" 
+                                       Text="-" 
+                                       FontSize="16" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#333"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Финансовая информация -->
+                <Border Background="#f0f7fb" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="СТОИМОСТЬ И СКИДКИ" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#333"
+                                   Margin="0,0,0,15"/>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Базовая цена:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbPrice" 
+                                       Text="0 ₽" 
+                                       FontSize="24" 
+                                       FontWeight="Bold"
+                                       Foreground="#b4d5e8"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Скидка:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbDiscount" 
+                                       Text="–" 
+                                       FontSize="18" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#28a745"/>
+                        </StackPanel>
+
+                        <Separator Margin="0,10"/>
+
+                        <StackPanel Margin="0,10,0,0">
+                            <TextBlock Text="Итоговая цена:" Foreground="#808080" FontSize="14"/>
+                            <TextBlock x:Name="TbFinalPrice" 
+                                       Text="0 ₽" 
+                                       FontSize="28" 
+                                       FontWeight="Bold"
+                                       Foreground="#b4d5e8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Дополнительная информация -->
+                <Border Background="#f0f7fb" 
+                        CornerRadius="8" 
+                        Padding="20" 
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#333"
+                                   Margin="0,0,0,15"/>
+
+                        <StackPanel Margin="0,5,0,10">
+                            <TextBlock Text="Комментарий:" Foreground="#808080" FontSize="13"/>
+                            <TextBlock x:Name="TbComment" 
+                                       Text="-" 
+                                       FontSize="14" 
+                                       Foreground="#333"
+                                       TextWrapping="Wrap"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center" 
+                            Margin="0,20,0,0">
+
+                    <Button Content="ОФОРМИТЬ АБОНЕМЕНТ" 
+                            Background="#b4d5e8"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Padding="40,12"
+                            Margin="0,0,15,0"
+                            Click="BtnSubscribe_Click"/>
+
+                    <Button Content="ЗАКРЫТЬ" 
+                            Background="LightGray"
+                            Foreground="Black"
+                            BorderThickness="0"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Padding="40,12"
+                            Click="BtnClose_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>

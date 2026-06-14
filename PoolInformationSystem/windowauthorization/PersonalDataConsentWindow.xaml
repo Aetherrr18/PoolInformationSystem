@@ -1,0 +1,53 @@
+﻿<Window x:Class="PoolInformation.WindowAuthorization.PersonalDataConsentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Обработка персональных данных" Height="650" Width="700"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="#F5F5F5">
+    <Border Margin="20" Background="White" CornerRadius="10" Padding="25" BorderThickness="1" BorderBrush="#D3D3D3">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ" 
+                       FontSize="22" FontWeight="Bold" Foreground="#b4d5e8" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="10">
+                <TextBlock FontSize="14" LineHeight="22" Foreground="#333" TextWrapping="Wrap">
+                    <Run FontWeight="Bold">1. Общие положения</Run><LineBreak/>
+                    Настоящим я, действуя свободно, своей волей и в своем интересе, даю согласие Оператору (Спортивный комплекс «Плавание») на обработку моих персональных данных в соответствии с ФЗ-152 «О персональных данных».
+                    <LineBreak/><LineBreak/>
+                    
+                    <Run FontWeight="Bold">2. Перечень обрабатываемых данных</Run><LineBreak/>
+                    • Фамилия, Имя, Отчество<LineBreak/>
+                    • Дата рождения, пол<LineBreak/>
+                    • Номер телефона, адрес электронной почты<LineBreak/>
+                    • Сведения о медицинской группе и состоянии здоровья<LineBreak/>
+                    • Данные об оформленных абонементах и платежах
+                    <LineBreak/><LineBreak/>
+                    
+                    <Run FontWeight="Bold">3. Цели обработки</Run><LineBreak/>
+                    • Регистрация и идентификация клиента в системе<LineBreak/>
+                    • Оформление, активация и продление абонементов<LineBreak/>
+                    • Информирование об услугах, акциях и изменениях в расписании<LineBreak/>
+                    • Выполнение обязательств перед клиентом и соблюдение законодательства РФ
+                    <LineBreak/><LineBreak/>
+                    
+                    <Run FontWeight="Bold">4. Способы и сроки обработки</Run><LineBreak/>
+                    Обработка осуществляется с использованием средств автоматизации и без них. Данные хранятся до достижения целей обработки или до момента отзыва согласия. Оператор обязуется не передавать данные третьим лицам без согласия субъекта, за исключением случаев, предусмотренных законодательством РФ.
+                    <LineBreak/><LineBreak/>
+                    
+                    <Run FontWeight="Bold">5. Права субъекта</Run><LineBreak/>
+                    Клиент вправе запросить информацию об обработке своих данных, потребовать их уточнения, блокирования или уничтожения, а также отозвать настоящее согласие, направив письменное заявление по адресу: г. Москва, ул. Спортивная, д. 15.
+                    <LineBreak/><LineBreak/>
+                    
+                    <Run FontStyle="Italic" Foreground="#808080">Нажимая кнопку «ПОЛУЧИТЬ КОД» / «ПОДТВЕРДИТЬ КОД», вы подтверждаете, что ознакомились с условиями и даете согласие на обработку персональных данных.</Run>
+                </TextBlock>
+            </ScrollViewer>
+
+            <Button Grid.Row="2" Content="ЗАКРЫТЬ" Background="#b4d5e8" Foreground="White" FontSize="16" FontWeight="Bold" Padding="40,12" HorizontalAlignment="Center" Margin="0,20,0,0" Click="BtnClose_Click"/>
+        </Grid>
+    </Border>
+</Window>

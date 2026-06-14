@@ -1,0 +1,124 @@
+﻿<Window x:Class="PoolInformation.WindowAdmin.AddEditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoolInformation.WindowAdmin"
+        mc:Ignorable="d"
+        Title="Пользователь" 
+        Height="700" Width="700"
+        Background="#F5F5F5">
+
+    <Border Margin="20" 
+            Background="White" 
+            CornerRadius="10" 
+            Padding="25" 
+            BorderThickness="1" 
+            BorderBrush="#D3D3D3">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <TextBlock Text="ФОРМА ПОЛЬЗОВАТЕЛЯ" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Foreground="#b4d5e8"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,25"/>
+
+                <!-- 🔹 ТЕЛЕФОН = ЛОГИН -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="📱 Номер телефона" 
+                               Foreground="#808080" 
+                               Margin="0,0,0,5"/>
+                    <TextBox x:Name="TbPhone" 
+                             FontSize="16" 
+                             Padding="8" 
+                             Width="560"
+                             HorizontalAlignment="Left"
+                             MaxLength="12"
+                             PreviewTextInput="TbPhone_PreviewTextInput"
+                             PreviewKeyDown="TbPhone_PreviewKeyDown"/>
+                </StackPanel>
+
+                <!-- ФИО -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                    <StackPanel Margin="0,0,10,0">
+                        <TextBlock Text="Фамилия" Foreground="#808080" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbLastName" FontSize="16" Padding="8" Width="180" MaxLength="50"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,0,10,0">
+                        <TextBlock Text="Имя" Foreground="#808080" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbFirstName" FontSize="16" Padding="8" Width="180" MaxLength="50"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Отчество" Foreground="#808080" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbPatronymic" FontSize="16" Padding="8" Width="180" MaxLength="50"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Дата рождения -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Дата рождения" Foreground="#808080" Margin="0,0,0,5"/>
+                    <DatePicker x:Name="DpBirthDate" FontSize="16" Padding="8" Width="250" HorizontalAlignment="Left"/>
+                </StackPanel>
+
+                <!-- Пол -->
+                <StackPanel Margin="0,0,0,15">
+                    <TextBlock Text="Пол" Foreground="#808080" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="CbGender" 
+                              FontSize="16" 
+                              Padding="8"
+                              Width="250"
+                              HorizontalAlignment="Left"
+                              DisplayMemberPath="GenderName"
+                              SelectedValuePath="GenderId"/>
+                </StackPanel>
+
+                <!-- Роль -->
+                <StackPanel Margin="0,0,0,25">
+                    <TextBlock Text="Роль" Foreground="#808080" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="CbRole" 
+                              FontSize="16" 
+                              Padding="8"
+                              Width="250"
+                              HorizontalAlignment="Left"
+                              DisplayMemberPath="RoleName"
+                              SelectedValuePath="RoleId"/>
+                </StackPanel>
+
+                <!-- Сообщение об ошибке -->
+                <TextBlock x:Name="TbMessage" 
+                           Text="" 
+                           Foreground="Red" 
+                           FontSize="12" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center" 
+                           Margin="0,0,0,10" 
+                           Visibility="Collapsed"/>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Vertical" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <Button Content="СОХРАНИТЬ" 
+                            Background="#b4d5e8" 
+                            Foreground="White"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Padding="25,10"
+                            Click="BtnSave_Click"/>
+
+                    <Button Content="ОТМЕНА" 
+                            Background="LightGray" 
+                            Foreground="Black"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Padding="25,10"
+                            Margin="0,10"
+                            Click="BtnCancel_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>

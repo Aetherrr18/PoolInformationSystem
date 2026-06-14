@@ -1,0 +1,24 @@
+﻿<Window x:Class="PoolInformation.WindowAdmin.AddEditMedicalGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoolInformation.WindowAdmin"
+        mc:Ignorable="d"
+        Title="Медицинская группа" Height="200" Width="400"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="#f5f9fc">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="НАЗВАНИЕ ГРУППЫ" FontWeight="Bold" Margin="0,0,0,5"/>
+        <TextBox x:Name="TbGroupName" Height="30" Margin="0,0,0,15"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="ОТМЕНА" Width="100" Height="35" Margin="0,0,10,0"
+                    Background="#ccc" Click="BtnCancel_Click"/>
+            <Button Content="СОХРАНИТЬ" Width="100" Height="35"
+                    Background="#b4d5e8" Foreground="White" FontWeight="Bold"
+                    Click="BtnSave_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,92 @@
+﻿<Window x:Class="PoolInformation.WindowClient.SubscriptionOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoolInformation.WindowClient"
+        mc:Ignorable="d"
+        Title="Оформление абонемента" Height="700" Width="600"
+        Background="#f5f9fc">
+
+    <Border Margin="20" Background="White" CornerRadius="10" Padding="25" BorderThickness="1" BorderBrush="#D3D3D3">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <!-- Заголовок -->
+                <TextBlock Text="ОФОРМЛЕНИЕ АБОНЕМЕНТА"
+                           FontSize="24" FontWeight="Bold" Foreground="#b4d5e8"
+                           HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+                <!-- Выбор медицинской группы -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Медицинская группа" Foreground="#808080" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="CbMedicalGroup"
+                              FontSize="16" Padding="8"
+                              DisplayMemberPath="GroupName"
+                              SelectedValuePath="MedicalGroupId"/>
+                </StackPanel>
+
+                <!-- Дополнительная скидка -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Дополнительная скидка" Foreground="#808080" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="CbExtraDiscount"
+                              FontSize="16" Padding="8"
+                              DisplayMemberPath="DiscountName"
+                              SelectedValuePath="DiscountId"/>
+                </StackPanel>
+
+                <!-- Способ оплаты -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Способ оплаты" Foreground="#808080" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="CbPaymentMethod"
+                              FontSize="16" Padding="8"
+                              DisplayMemberPath="MethodName"
+                              SelectedValuePath="MethodId"/>
+                </StackPanel>
+
+                <!-- Расчёт стоимости -->
+                <Border Background="#f0f7fb" CornerRadius="8" Padding="20" Margin="0,0,0,25">
+                    <StackPanel>
+                        <TextBlock Text="РАСЧЁТ СТОИМОСТИ" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Базовая цена:" Width="180" Foreground="#808080"/>
+                            <TextBlock x:Name="TbBasePrice" Text="0 ₽" FontSize="16" Foreground="#333"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Скидка абонемента:" Width="180" Foreground="#808080"/>
+                            <TextBlock x:Name="TbSubscriptionDiscount" Text="–" FontSize="16" Foreground="#28a745"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Доп. скидка:" Width="180" Foreground="#808080"/>
+                            <TextBlock x:Name="TbExtraDiscount" Text="–" FontSize="16" Foreground="#28a745"/>
+                        </StackPanel>
+
+                        <Separator Margin="0,10"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBlock Text="Итого к оплате:" Width="180" Foreground="#808080" FontWeight="Bold"/>
+                            <TextBlock x:Name="TbTotalPrice" Text="0 ₽" FontSize="22" FontWeight="Bold" Foreground="#b4d5e8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="ОФОРМИТЬ" 
+                            Background="#b4d5e8" Foreground="White"
+                            FontSize="16" FontWeight="Bold" Padding="30,10"
+                            Click="BtnConfirm_Click" Margin="0,0,15,0"/>
+
+                    <Button Content="ОТМЕНА" 
+                            Background="LightGray" Foreground="Black"
+                            FontSize="16" FontWeight="Bold" Padding="30,10"
+                            Click="BtnCancel_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>

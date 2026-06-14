@@ -1,0 +1,152 @@
+﻿<Window x:Class="PoolInformation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoolInformation"
+        mc:Ignorable="d"
+        Title="Авторизация" 
+        Height="900" Width="1200"
+        MinHeight="900" MinWidth="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+
+    <Grid>
+        <Border Margin="40" 
+                Background="White" 
+                CornerRadius="50" 
+                Padding="50" 
+                BorderThickness="1" 
+                BorderBrush="#D3D3D3">
+
+            <StackPanel VerticalAlignment="Center">
+
+                <Image Source="/Resource/Логотип.png" Height="100" 
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <StackPanel HorizontalAlignment="Center" 
+                            Margin="0,0,0,25">
+
+                    <TextBlock Text="СПОРТИВНЫЙ КОМПЛЕКС" 
+                               FontSize="50" FontWeight="Bold" 
+                               Foreground="#b4d5e8" 
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="ПЛАВАНИЕ" 
+                               FontSize="45"
+                               Foreground="#b4d5e8" 
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- 🔹 ТЕПЕРЬ ВМЕСТО ЛОГИНА — НОМЕР ТЕЛЕФОНА -->
+                <StackPanel Margin="0,0,0,20" 
+                            x:Name="LoginPanel">
+
+                    <TextBlock Text="📱 Номер телефона" 
+                               Foreground="#808080" 
+                               Margin="0,0,0,5" 
+                               FontSize="30"/>
+
+                    <Border BorderBrush="#D3D3D3" 
+                            BorderThickness="2" 
+                            CornerRadius="10" 
+                            Background="White">
+
+                        <TextBox x:Name="LoginTextBox" 
+                                 BorderThickness="0" 
+                                 Padding="10,8" 
+                                 FontSize="25"
+                                 MaxLength="12"
+                                 PreviewTextInput="LoginTextBox_PreviewTextInput"
+                                 PreviewKeyDown="LoginTextBox_PreviewKeyDown"
+                                 DataObject.Pasting="LoginTextBox_Pasting"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Поле кода (изначально скрыто) -->
+                <StackPanel Margin="0,0,0,20" 
+                            x:Name="CodePanel"
+                            Visibility="Collapsed">
+
+                    <TextBlock Text="🔢 Одноразовый код" 
+                               Foreground="#808080"
+                               Margin="0,0,0,5" 
+                               FontSize="30"/>
+
+                    <Border BorderBrush="#D3D3D3" 
+                            BorderThickness="1"
+                            CornerRadius="2" 
+                            Background="White">
+
+                        <TextBox x:Name="CodeTextBox"
+                                 BorderThickness="0" 
+                                 Padding="10,8" 
+                                 FontSize="25" 
+                                 MaxLength="6" 
+                                 PreviewTextInput="NumberValidationTextBox"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Сообщения -->
+                <TextBlock x:Name="MessageTextBlock" 
+                           Text="" Foreground="Red" 
+                           FontSize="20" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center" 
+                           Margin="0,0,0,15" 
+                           Visibility="Collapsed"/>
+
+                <!-- Основная кнопка -->
+                <Button x:Name="ActionButton" 
+                        Content="ПОЛУЧИТЬ КОД" 
+                        Background="#b4d5e8" 
+                        Foreground="White" 
+                        FontSize="30" 
+                        FontWeight="Bold"
+                        Height="60" 
+                        BorderThickness="0" 
+                        Padding="20,5" 
+                        Margin="0,0,0,10" 
+                        Click="ActionButton_Click"/>
+
+                <!-- Кнопка "Получить код заново" (скрыта по умолчанию) -->
+                <Button x:Name="ResendCodeButton"
+                        Content="ПОЛУЧИТЬ КОД ЗАНОВО" 
+                        Background="LightGray" 
+                        Foreground="White"
+                        FontSize="25"
+                        Height="50" 
+                        BorderThickness="0" 
+                        Padding="15,5"
+                        Margin="0,0,0,20" 
+                        Click="ResendCodeButton_Click"
+                        Visibility="Collapsed"/>  
+                
+                <!-- Регистрация -->
+                <TextBlock Text="Нет аккаунта? Зарегистрироваться" 
+                           Foreground="#808080" 
+                           HorizontalAlignment="Center"
+                           TextDecorations="Underline" 
+                           Cursor="Hand" 
+                           FontSize="30" 
+                           TextWrapping="Wrap" 
+                           Width="500" 
+                           TextAlignment="Center"
+                           MouseLeftButtonUp="RegistrationTextBlock_MouseLeftButtonUp"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Оформление пробного абонемента -->
+        <TextBlock Text="Оформление пробного абонемента" 
+                   Foreground="#808080" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Bottom" 
+                   Margin="0,0,0,50"
+                   TextDecorations="Underline" 
+                   Cursor="Hand" 
+                   FontSize="30" 
+                   TextWrapping="Wrap" 
+                   Width="500" 
+                   TextAlignment="Center"
+                   MouseLeftButtonUp="TrialSubscriptionTextBlock_MouseLeftButtonUp"/>
+    </Grid>
+</Window>
